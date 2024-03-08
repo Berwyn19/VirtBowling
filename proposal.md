@@ -1,6 +1,10 @@
 ## Title of your project
+Bowling
 
 ## Team members
+- **Sazzad Islam** - [GitHub](https://github.com/sazzadi-r14)
+- **Jermaine Zhao** - [GitHub](https://github.com/jerminazhao)
+- **Berwyn** - [GitHub](https://github.com/berwyn19)
 
 ## Project description
 Short description of the basic idea and end goal you are aiming for. 
