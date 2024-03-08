@@ -23,6 +23,4 @@ Berwyn - Handles everything related to the graphics such as converting the ASCII
 Finish everything related to sensors and, at the very least, complete the creation of a falling pin animation for a single pin.
 
 ## Resources needed, issues
-Are there books/code/tools/materials that you need access to? 
-What are the possible risks to overcome? What are you concerned about? 
-How can we help you succeed?
+The possible risk of this project is speed. We aim to create a smooth animation but the data that we have to handle is huge.
