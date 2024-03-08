@@ -7,19 +7,20 @@ Bowling
 - **Berwyn** - [GitHub](https://github.com/berwyn19)
 
 ## Project description
-Short description of the basic idea and end goal you are aiming for. 
-Include stretch goals and/or fallback position to indicate how you 
-might fine-tune the project scope if needed.
+We aim to transform a traditional bowling game into an interactive virtual bowling game. A ball will be thrown to a monitor, beneath
+which lies a distance sensor to detect where the ball hits the monitor. The monitor will then simulate an animation of falling pins based on 
+the information obtained from the distance sensor.
 
 ## Hardware, budget
-Itemize what hardware, if any, you need and your plan for acquiring it.
-Rough budget for the project. We can reimburse cost of parts up to $20 per person.
+DWEII VL53L1X $15 for 2. We have got the sensor.
 
 ## Tasks, member responsibilities
-Each team member should be responsible for a clearly identifiable part of the project.
+Sazzad Islam - Setting up the sensors and making the system standalone.
+Jermaine Zhao - Creates simulation of falling pins with Unity, gathers the necessary frames, and converts the picture into ASCII.
+Berwyn - Handles everything related to the graphics such as converting the ASCII into pixels and converting the frames into a dynamic animation.
 
 ## Schedule, midpoint milestones
-What are the one-week goals you plan to meet for next week?
+Finish everything related to sensors and, at the very least, complete the creation of a falling pin animation for a single pin.
 
 ## Resources needed, issues
 Are there books/code/tools/materials that you need access to? 
