@@ -8,6 +8,11 @@
 ////////////////
     Updated by Aditi Bhaskar (aditijb@stanford.edu) to repeat commands if not rightfully ACK/NAK'ed
     i2c reference: https://www.ti.com/lit/an/slva704/slva704.pdf
+
+    ////////////////
+    Updated by Sazzad Islam (sazzad14@stanford.edu) after borrowing from Aditi Bhaskar
+    The Snapshot of the version borrowed from aditi can be found in the "Added i2c Library" commit
+
  */
 #include "i2c.h"
 #include "gpio.h"
@@ -65,10 +70,6 @@ static void write_byte(unsigned char byte) {
     gpio_set_input(module.sda);
     gpio_write(module.scl, 1); // clock hi
     timer_delay_us(5); 
-
-
-    // Julie's implm - no error checking
-    // gpio_read(module.sda) 
 
     // Aditi's implm WITH check 
     int dev_ack = gpio_read(module.sda) ;
