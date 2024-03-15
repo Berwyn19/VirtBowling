@@ -40,7 +40,7 @@ int main(void) {
         }
 
         // Optional: Add a delay to limit the rate of measurements
-        // timer_delay_ms(500); // Delay for 500 milliseconds
+        // timer_delay_ms(100); // Delay for 500 milliseconds
     }
 
     return 0;

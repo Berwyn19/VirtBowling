@@ -36,7 +36,7 @@ hc_sr04_status_t hc_sr04_measure_distance(hc_sr04_sensor_t* sensor, int* distanc
     while (gpio_read(sensor->echo_pin) == 1); // measure how long echo is held high (width of pulse)
     unsigned long usecs = (timer_get_ticks() - start_tick) / TICKS_PER_USEC;
 
-    // Using 74 usec/inch as the speed of sound conversion factor
+    // Using 29 usec/cm as the speed of sound conversion factor
     int cm = usecs / 29;
     *distance = cm / 2; // divide by 2 to account for the round trip
 
