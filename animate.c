@@ -1,10 +1,6 @@
-#include "animate.h"
 #include "gl.h"
+#include "animate.h"
 #include "timer.h"
-#include "ascii.h"
-const char * pinStraight[19];
-const char * pinLeft[19];
-const char * pinRight[19];
 
 enum {
     b = 0xffffffff,
@@ -13,6 +9,9 @@ enum {
     e = 0xffbc8f8f,
     f = 0xff808000,
 };
+const char * pinStraight[18];
+const char * pinRight[18];
+const char * pinLeft[18];
 
 void initializePinStraight(){
     pinStraight[0] = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
@@ -18363,15 +18362,26 @@ void display_falling_zone1() {
     if (random_int % 2 == 0) {
         for (int i = 0; i < 5; i++) {
             gl_clear(gl_color(0, 0, 0));
-            draw_ascii(pinRight[4*i], 25, 325);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinRight[4*i + 1], 25, 325);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     } 
     else {
         for (int i = 0; i < 5; i++) {
             gl_clear(gl_color(0, 0, 0));
-            draw_ascii(pinRight[4*i], 25, 325);
-            draw_ascii(pinRight[4*i], 100, 350);
+            draw_ascii(pinRight[4*i + 1], 25, 325);
+            draw_ascii(pinRight[4*i + 1], 100, 350);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     }
@@ -18383,13 +18393,24 @@ void display_falling_zone2() {
         for (int i = 0; i < 5; i++) {
             gl_clear(gl_color(0, 0, 0));
             draw_ascii(pinStraight[4*i], 25, 325);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     } else {
         for (int i = 0; i < 5; i++) {
             gl_clear(gl_color(0, 0, 0));
             draw_ascii(pinStraight[4*i], 25, 325);
-            draw_ascii(pinRight[4*i], 100, 350);
+            draw_ascii(pinRight[4*i + 1], 100, 350);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     }
@@ -18401,7 +18422,12 @@ void display_falling_zone3() {
         for (int i = 0; i < 5; i++) {
             gl_clear(gl_color(0, 0, 0));
             draw_ascii(pinLeft[4*i], 25, 325);
-            draw_ascii(pinRight[4*i], 100, 350);
+            draw_ascii(pinRight[4*i + 1], 100, 350);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     } else {
@@ -18409,6 +18435,11 @@ void display_falling_zone3() {
             gl_clear(gl_color(0, 0, 0));
             draw_ascii(pinLeft[4*i], 25, 325);
             draw_ascii(pinLeft[4*i], 100, 350);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     }
@@ -18421,7 +18452,11 @@ void display_falling_zone4() {
             gl_clear(gl_color(0, 0, 0));
             draw_ascii(pinLeft[4*i], 25, 325);
             draw_ascii(pinStraight[4*i], 100, 350);
-            draw_ascii(pinRight[4*i], 175, 375);
+            draw_ascii(pinRight[4*i + 1], 175, 375);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     }
@@ -18430,6 +18465,11 @@ void display_falling_zone4() {
             gl_clear(gl_color(0, 0, 0));
             draw_ascii(pinLeft[4*i], 25, 325);
             draw_ascii(pinLeft[4*i], 100, 350);
+            draw_ascii(pinRight[0], 175, 375);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     }
@@ -18437,8 +18477,12 @@ void display_falling_zone4() {
         for (int i = 0; i < 5; i++) {
             gl_clear(gl_color(0, 0, 0));
             draw_ascii(pinLeft[4*i], 25, 325);
-            draw_ascii(pinRight[4*i], 100, 350);
+            draw_ascii(pinRight[4*i + 1], 100, 350);
             draw_ascii(pinLeft[4*i], 175, 375);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     }
@@ -18451,16 +18495,24 @@ void display_falling_zone5() {
             gl_clear(gl_color(0, 0, 0));
             draw_ascii(pinLeft[4*i], 100, 350);
             draw_ascii(pinStraight[4*i], 25, 325);
-            draw_ascii(pinRight[4*i], 175, 375);
+            draw_ascii(pinRight[4*i + 1], 175, 375);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     }
     else if (random_int % 2 == 1) {
         for (int i = 0; i < 5; i++) {
             gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinStraight[0], 25, 325);
             draw_ascii(pinLeft[4*i], 100, 350);
-            draw_ascii(pinRight[4*i], 175, 375);
-            draw_ascii(pinRight[4*i], 175, 375);
+            draw_ascii(pinRight[4*i + 1], 175, 375);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     }
@@ -18471,17 +18523,26 @@ void display_falling_zone6() {
     if (random_int % 2 == 0) {
         for (int i = 0; i < 5; i++) {
             gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinStraight[0], 25, 325);
             draw_ascii(pinLeft[4*i], 100, 350);
             draw_ascii(pinStraight[4*i], 175, 375);
-            draw_ascii(pinRight[4*i], 250, 400);
+            draw_ascii(pinRight[4*i + 1], 250, 400);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     } 
     else {
         for (int i = 0; i < 5; i++) {
             gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinStraight[0], 25, 325);
             draw_ascii(pinStraight[4*i], 175, 375);
             draw_ascii(pinLeft[4*i], 100, 350);
+            draw_ascii(pinRight[4*i + 1], 250, 400);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     }
@@ -18495,7 +18556,10 @@ void display_falling_zone7() {
             draw_ascii(pinLeft[4*i], 175, 375);
             draw_ascii(pinLeft[4*i], 100, 350);
             draw_ascii(pinLeft[4*i], 25, 325);
-            draw_ascii(pinRight[4*i], 250, 400);
+            draw_ascii(pinRight[4*i + 1], 250, 400);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     } 
@@ -18505,8 +18569,10 @@ void display_falling_zone7() {
             draw_ascii(pinLeft[4*i], 175, 375);
             draw_ascii(pinLeft[4*i], 100, 350);
             draw_ascii(pinLeft[4*i], 25, 325);
-            draw_ascii(pinRight[4*i], 250, 400);
+            draw_ascii(pinRight[4*i + 1], 250, 400);
             draw_ascii(pinStraight[4*i], 325, 375);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     }
@@ -18516,9 +18582,10 @@ void display_falling_zone7() {
             draw_ascii(pinLeft[4*i], 175, 375);
             draw_ascii(pinLeft[4*i], 100, 350);
             draw_ascii(pinLeft[4*i], 25, 325);
-            draw_ascii(pinRight[4*i], 250, 400);
-            draw_ascii(pinRight[4*i], 325, 375);
-            draw_ascii(pinRight[4*i], 400, 350);
+            draw_ascii(pinRight[4*i + 1], 250, 400);
+            draw_ascii(pinRight[4*i + 1], 325, 375);
+            draw_ascii(pinRight[4*i + 1], 400, 350);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     }
@@ -18531,8 +18598,11 @@ void display_falling_zone8() {
             gl_clear(gl_color(0, 0, 0));
             draw_ascii(pinLeft[4*i], 250, 400);
             draw_ascii(pinLeft[4*i], 100, 350);
-            draw_ascii(pinLeft[4*i], 25, 325);
-            draw_ascii(pinRight[4*i], 250, 400);
+            draw_ascii(pinRight[4*i + 1], 25, 325);
+            draw_ascii(pinLeft[4*i], 175, 375);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinStraight[0], 475, 325);
             gl_swap_buffer();
         }
     } 
@@ -18542,7 +18612,7 @@ void display_falling_zone8() {
             draw_ascii(pinLeft[4*i], 175, 375);
             draw_ascii(pinLeft[4*i], 100, 350);
             draw_ascii(pinLeft[4*i], 25, 325);
-            draw_ascii(pinRight[4*i], 250, 400);
+            draw_ascii(pinRight[4*i + 1], 250, 400);
             draw_ascii(pinStraight[4*i], 325, 375);
             gl_swap_buffer();
         }
@@ -18552,10 +18622,245 @@ void display_falling_zone8() {
             gl_clear(gl_color(0, 0, 0));
             draw_ascii(pinLeft[4*i], 175, 375);
             draw_ascii(pinLeft[4*i], 100, 350);
-            draw_ascii(pinLeft[4*i], 25, 325);
-            draw_ascii(pinRight[4*i], 250, 400);
-            draw_ascii(pinRight[4*i], 325, 375);
-            draw_ascii(pinRight[4*i], 400, 350);
+            draw_ascii(pinRight[4*i + 1], 25, 325);
+            draw_ascii(pinRight[4*i + 1], 250, 400);
+            draw_ascii(pinRight[4*i + 1], 325, 375);
+            draw_ascii(pinRight[4*i + 1], 400, 350);
+            draw_ascii(pinStraight[4*i], 475, 325);
+            gl_swap_buffer();
+        }
+    }
+}
+
+void display_falling_zone9() {
+    int random_int = timer_get_ticks();
+    if (random_int % 3 == 0) {
+        for (int i = 0; i < 5; i++) {
+            gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinRight[4*i + 1], 325, 375);
+            draw_ascii(pinRight[4*i + 1], 400, 350);
+            draw_ascii(pinRight[4*i + 1], 475, 325);
+            draw_ascii(pinLeft[4*i], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 25, 325);
+            gl_swap_buffer();
+        }
+    } 
+    else if (random_int % 3 == 1) {
+        for (int i = 0; i < 5; i++) {
+            gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinRight[4*i + 1], 325, 375);
+            draw_ascii(pinRight[4*i + 1], 400, 350);
+            draw_ascii(pinRight[4*i + 1], 475, 325);
+            draw_ascii(pinLeft[4*i], 250, 400);
+            draw_ascii(pinStraight[4*i], 175, 375);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 25, 325);
+            gl_swap_buffer();
+        }
+    }
+    else {
+        for (int i = 0; i < 5; i++) {
+            gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinRight[4*i + 1], 325, 375);
+            draw_ascii(pinRight[4*i + 1], 400, 350);
+            draw_ascii(pinRight[4*i + 1], 475, 325);
+            draw_ascii(pinLeft[4*i], 250, 400);
+            draw_ascii(pinLeft[4*i], 175, 375);
+            draw_ascii(pinLeft[4*i], 100, 350);
+            draw_ascii(pinStraight[0], 25, 325);
+            gl_swap_buffer();
+        }
+    }
+}
+
+void display_falling_zone10() {
+    int random_int = timer_get_ticks();
+    if (random_int % 2 == 0) {
+        for (int i = 0; i < 5; i++) {
+            gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinStraight[0], 475, 325);
+            draw_ascii(pinRight[4*i + 1], 400, 350);
+            draw_ascii(pinStraight[4*i], 375, 375);
+            draw_ascii(pinLeft[4*i + 1], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 25, 325);
+            gl_swap_buffer();
+        }
+    } 
+    else {
+        for (int i = 0; i < 5; i++) {
+            gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinStraight[0], 475, 325);
+            draw_ascii(pinStraight[4*i], 325, 375);
+            draw_ascii(pinRight[4*i + 1], 400, 350);
+            draw_ascii(pinLeft[4*i], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 25, 325);
+            gl_swap_buffer();
+        }
+    }
+}
+
+void display_falling_zone11() {
+    int random_int = timer_get_ticks();
+    if (random_int % 2 == 0) {
+        for (int i = 0; i < 5; i++) {
+            gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinRight[4*i + 1], 400, 350);
+            draw_ascii(pinStraight[4*i], 475, 325);
+            draw_ascii(pinLeft[4*i], 325, 375);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 25, 325);
+            gl_swap_buffer();
+        }
+    }
+    else if (random_int % 2 == 1) {
+        for (int i = 0; i < 5; i++) {
+            gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinStraight[0], 475, 325);
+            draw_ascii(pinRight[4*i + 1], 400, 350);
+            draw_ascii(pinLeft[4*i], 325, 375);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 25, 325);
+            gl_swap_buffer();
+        }
+    }
+}
+
+void display_falling_zone12() {
+    int random_int = timer_get_ticks();
+    if (random_int % 3 == 0) {
+        for (int i = 0; i < 5; i++) {
+            gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinRight[4*i + 1], 475, 325);
+            draw_ascii(pinStraight[4*i], 400, 350);
+            draw_ascii(pinLeft[4*i], 325, 375);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 25, 325);
+            gl_swap_buffer();
+        }
+    }
+    else if (random_int % 3 == 1) {
+        for (int i = 0; i < 5; i++) {
+            gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinRight[4*i + 1], 475, 325);
+            draw_ascii(pinRight[4*i + 1], 400, 350);
+            draw_ascii(pinRight[0], 325, 375);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 25, 325);
+            gl_swap_buffer();
+        }
+    }
+    else {
+        for (int i = 0; i < 5; i++) {
+            gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinRight[4*i + 1], 475, 325);
+            draw_ascii(pinLeft[4*i], 400, 350);
+            draw_ascii(pinRight[4*i + 1], 325, 375);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 25, 325);
+            gl_swap_buffer();
+        }
+    }
+}
+
+void display_falling_zone13() {
+    int random_int = timer_get_ticks();
+    if (random_int % 2 == 0) {
+        for (int i = 0; i < 5; i++) {
+            gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinRight[4*i + 1], 475, 325);
+            draw_ascii(pinLeft[4*i], 400, 350);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 25, 325);
+            gl_swap_buffer();
+        }
+    } else {
+        for (int i = 0; i < 5; i++) {
+            gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinRight[4*i + 1], 475, 325);
+            draw_ascii(pinRight[4*i + 1], 400, 350);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 25, 325);
+            gl_swap_buffer();
+        }
+    }
+}
+
+void display_falling_zone14() {
+    int random_int = timer_get_ticks();
+    if (random_int % 2 == 0) {
+        for (int i = 0; i < 5; i++) {
+            gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinStraight[4*i], 475, 325);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinStraight[0], 25, 325);
+            gl_swap_buffer();
+        }
+    } else {
+        for (int i = 0; i < 5; i++) {
+            gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinStraight[4*i], 475, 325);
+            draw_ascii(pinLeft[4*i], 400, 350);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 25, 325);
+            gl_swap_buffer();
+        }
+    }
+}
+
+void display_falling_zone15() {
+    int random_int = timer_get_ticks();
+    if (random_int % 2 == 0) {
+        for (int i = 0; i < 5; i++) {
+            gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 400, 350);
+            draw_ascii(pinLeft[4*i], 475, 325);
+            draw_ascii(pinStraight[0], 25, 325);
+            gl_swap_buffer();
+        }
+    } 
+    else {
+        for (int i = 0; i < 5; i++) {
+            gl_clear(gl_color(0, 0, 0));
+            draw_ascii(pinLeft[4*i], 475, 325);
+            draw_ascii(pinLeft[4*i], 400, 350);
+            draw_ascii(pinStraight[0], 250, 400);
+            draw_ascii(pinStraight[0], 175, 375);
+            draw_ascii(pinStraight[0], 325, 375);
+            draw_ascii(pinStraight[0], 100, 350);
+            draw_ascii(pinStraight[0], 25, 325);
             gl_swap_buffer();
         }
     }

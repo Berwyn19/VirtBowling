@@ -1,7 +1,9 @@
 #ifndef ANIMATE_H
 #define ANIMATE_H
 
-// #include "gl.h"
+extern const char * pinStraight [18];
+extern const char * pinRight [18];
+extern const char * pinLeft [18];
 
 void draw_ascii(const char *str, int x, int y);
 
