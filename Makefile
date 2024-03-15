@@ -3,7 +3,7 @@
 # Additional source file(s) mymodule.c (edit SOURCES to change)
 # Link against your libmango + reference libmango (edit LDLIBS, LDFLAGS to change)
 
-PROGRAM = bowling.bin
+PROGRAM = myprogram.bin
 SOURCES = $(PROGRAM:.bin=.c) animate.c i2c.c hc_sr04.c
 
 all: $(PROGRAM)

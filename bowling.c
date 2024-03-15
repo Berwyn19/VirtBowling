@@ -38,37 +38,4 @@ void main(void) {
     // Initialize sensors with specific GPIO pins
     hc_sr04_init(&left_sensor, GPIO_PB3, GPIO_PB4); // Check these pin assignments
     hc_sr04_init(&right_sensor, GPIO_PB11, GPIO_PB12); // And these as well
-    while (1) {
-        display_initial();
-        display_falling_zone8();
-        timer_delay_ms(1000);
-        display_falling_zone9();
-        timer_delay_ms(1000);
-        display_falling_zone10();
-        timer_delay_ms(1000);
-        display_falling_zone11();
-        timer_delay_ms(1000);
-        display_falling_zone12();
-        timer_delay_ms(1000);
-        display_falling_zone13();
-        timer_delay_ms(1000);
-        display_falling_zone14();
-        timer_delay_ms(1000);
-    }
-    // while (1) {
-
-    //     hc_sr04_status_t left_status = hc_sr04_measure_distance(&left_sensor, &left_distance);
-    //     hc_sr04_status_t right_status = hc_sr04_measure_distance(&right_sensor, &right_distance);
-
-
-    //     if (left_status == HC_SR04_SUCCESS && right_status == HC_SR04_SUCCESS) {
-    //         printf("Left = %d cm || Right = %d cm\n", left_distance, right_distance);
-    //     } else {
-    //         // Handle error, for simplicity just printing an error message here
-    //         printf("Error reading sensor(s)\n");
-    //     }
-
-    //     // Optional: Add a delay to limit the rate of measurements
-    //     // timer_delay_ms(500); // Delay for 500 milliseconds
-    // }
 }
