@@ -18347,6 +18347,7 @@ void draw_ascii(const char *str, int x, int y) {
 }
 
 void display_initial() {
+    gl_clear(gl_color(0, 0, 0));
     draw_ascii(pinStraight[0], 250, 400);
     draw_ascii(pinStraight[0], 175, 375);
     draw_ascii(pinStraight[0], 325, 375);
@@ -18864,4 +18865,53 @@ void display_falling_zone15() {
             gl_swap_buffer();
         }
     }
+}
+
+void display_zone(int left_distance, int right_distance) {
+    if (left_distance > 4 && left_distance <= 6) {
+        display_falling_zone1();
+    }
+    else if (left_distance > 6 && left_distance <= 9) {
+        display_falling_zone2();
+    }
+    else if (left_distance > 9 && left_distance <= 13) {
+        display_falling_zone3();
+    }
+    else if (left_distance > 13 && left_distance <= 17) {
+        display_falling_zone4();
+    }
+    else if (left_distance > 17 && left_distance <= 20) {
+        display_falling_zone5();
+    }
+    else if (left_distance > 20 && left_distance <= 23) {
+        display_falling_zone6();
+    }
+    else if (left_distance > 23 && left_distance <= 26) {
+        display_falling_zone7();
+    }
+    else if (left_distance > 26 && left_distance <= 29) {
+        display_falling_zone8();
+    }
+    else if (left_distance > 29 && left_distance <= 32) {
+        display_falling_zone9();
+    }
+    else if (left_distance > 32 && left_distance <= 35) {
+        display_falling_zone10();
+    }
+    else if (left_distance > 35 && left_distance <= 39) {
+        display_falling_zone11();
+    }
+    else if (left_distance > 39 && left_distance <= 43) {
+        display_falling_zone12();
+    }
+    else if (left_distance > 43 && left_distance <= 46) {
+        display_falling_zone13();
+    }
+    else if (left_distance > 46 && left_distance <= 48) {
+        display_falling_zone14();
+    }
+    else if (left_distance > 48 && left_distance <= 50) {
+        display_falling_zone15();
+    }
+
 }

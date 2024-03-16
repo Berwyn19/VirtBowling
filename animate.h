@@ -45,5 +45,6 @@ void display_falling_zone14();
 
 void display_falling_zone15();
 
+void display_zone(int left_distance, int right_distance);
 
 #endif
