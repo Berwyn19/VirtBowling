@@ -43,10 +43,11 @@ int main(void) {
     gl_init(800, 600, GL_DOUBLEBUFFER);
     gl_clear(gl_color(0, 0, 0));
 
+
+    // Declaring The necessary variables.
     hc_sr04_sensor_t left_sensor, right_sensor;
-    // hc_sr04_sensor_t left_sensor;
     int left_distance, right_distance;
-    // int left_distance;
+
     int left_distance_0, right_distance_0;
     // int left_distance_0 = 162;
     hc_sr04_status_t left_status, right_status;
@@ -92,7 +93,7 @@ int main(void) {
             //     printf("Error reading sensor(s)\n");
             // }
 
-            if(abs(left_distance_0 - left_distance) >= 1 || abs(right_distance_0 - right_distance) >= 1){
+            if(abs(left_distance_0 - left_distance) >= 10 || abs(right_distance_0 - right_distance) >= 10){
                 left_distance_0 = left_distance;
                 right_distance_0 = right_distance;
                 break;
