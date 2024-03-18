@@ -1,11 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
 
-struct Player{
-    char * name;
-    int score[5];
-    int round;
-};
 
 char ** start_game();
 

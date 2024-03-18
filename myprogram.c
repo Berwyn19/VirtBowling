@@ -16,6 +16,7 @@
 #include "keyboard.h"
 #include "interrupts.h"
 #include "malloc.h"
+#include "scoreboard.h"
 
 int abs(int n){
     if(n >= 0){
