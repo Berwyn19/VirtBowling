@@ -15,7 +15,7 @@
 #include "scoreboard.h"
 
 void draw_scoreboard_boilerplate(void) {
-    printf("Inside the boilerplate function");
+    printf("Inside the boilerplate function\n");
     gl_draw_line(0, 0, 0, 40, GL_WHITE);
     gl_draw_line(0, 0, 800, 0, GL_WHITE);
     gl_draw_line(0, 40, 800, 40, GL_WHITE);

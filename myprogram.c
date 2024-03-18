@@ -81,7 +81,9 @@ int main(void) {
     player2->round = 0;
     
     draw_scoreboard_boilerplate();
-    uart_putstring("Drew scoreboard boilerplate");
+    // gl_swap_buffer();
+    // draw_scoreboard_boilerplate();
+    uart_putstring("Drew scoreboard boilerplate\n");
 
     while (1) {
         while(1){
