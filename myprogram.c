@@ -12,22 +12,29 @@
 #include "gl.h"
 #include "animate.h"
 #include "utils.h"
+#include "game.h"
+#include "keyboard.h"
+#include "interrupts.h"
+#include "malloc.h"
 
 int abs(int n){
-    if(n>=0){
+    if(n >= 0){
         return n;
     }
     else{
         return -n;
     }
 }
-
-
 // Example main function to demonstrate usage
+int count = 0;
+
 int main(void) {
     timer_init();
     gpio_init();
     uart_init();
+    interrupts_init();
+    keyboard_init(GPIO_PG12, GPIO_PB7);
+    interrupts_global_enable();
 
     initializePinStraight();
     initializePinRight();
@@ -37,13 +44,17 @@ int main(void) {
     gl_clear(gl_color(0, 0, 0));
 
     hc_sr04_sensor_t left_sensor, right_sensor;
+    // hc_sr04_sensor_t left_sensor;
     int left_distance, right_distance;
+    // int left_distance;
     int left_distance_0, right_distance_0;
+    // int left_distance_0 = 162;
     hc_sr04_status_t left_status, right_status;
+    // hc_sr04_status_t left_status;
     // int prev_left, prev_right;
     // prev_left = prev_right = 130;
 
-    // Initialize sensors with specific GPIO pins
+    //Initialize sensors with specific GPIO pins
     hc_sr04_init(&left_sensor, GPIO_PB3, GPIO_PB4); // Check these pin assignments
     hc_sr04_init(&right_sensor, GPIO_PB11, GPIO_PB12); // And these as well
 
@@ -52,11 +63,24 @@ int main(void) {
     hc_sr04_status_t left_status_0 = hc_sr04_measure_distance(&left_sensor, &left_distance_0);
     hc_sr04_status_t right_status_0 = hc_sr04_measure_distance(&right_sensor, &right_distance_0);
 
-    
+    // char ** players = start_game();
+    int struct_size = 5 * sizeof(int) + 10 * sizeof(char) + sizeof(int);
+
+    struct Player * player1 = malloc(struct_size);
+    struct Player * player2 = malloc(struct_size);
+
+    // player1->name = players[0];
+    // player2->name = players[1];
+
+    // player1->score = malloc(5 * sizeof(int));
+    // player2->score = malloc(5 * sizeof(int));
+
+    player1->round = 0;
+    player2->round = 0;
 
     while (1) {
-
         while(1){
+            display_turn(count, "Berwyn", "Sazzad");
             display_initial();
             left_status = hc_sr04_measure_distance(&left_sensor, &left_distance);
             right_status = hc_sr04_measure_distance(&right_sensor, &right_distance);
@@ -64,41 +88,36 @@ int main(void) {
             if (left_status != HC_SR04_SUCCESS || right_status != HC_SR04_SUCCESS){
                 printf("Error reading sensor(s)\n");
             }
+            // if (left_status != HC_SR04_SUCCESS) {
+            //     printf("Error reading sensor(s)\n");
+            // }
 
             if(abs(left_distance_0 - left_distance) >= 1 || abs(right_distance_0 - right_distance) >= 1){
                 left_distance_0 = left_distance;
                 right_distance_0 = right_distance;
                 break;
             }
+            // if (left_distance_0 - left_distance >= 3) {
+            //     break;
+            // }
         }
-       // gl_swap_buffer();
+        int score = display_zone(left_distance, 0);
 
-        // hc_sr04_status_t left_status = hc_sr04_measure_distance(&left_sensor, &left_distance);
-        // hc_sr04_status_t right_status = hc_sr04_measure_distance(&right_sensor, &right_distance);
+        if ((count % 2) == 0) {
+            (player1->score)[player1->round] = score;
+            player1->round++;
+        }
 
-        // display_initial();
+        else if ((count % 2) == 1) {
+            (player2->score)[player2->round] = score;
+            player2->round++;
+        }
 
-        display_zone(left_distance, right_distance);
-
-
-        // if (left_status == HC_SR04_SUCCESS && right_status == HC_SR04_SUCCESS) {
-        //     printf("Left = %d cm || Right = %d cm\n", left_distance, right_distance);
-
-        //     display_zone(left_distance, right_distance);
-        //     //timer_delay_ms(2000);
-            
-
-        // } else {
-        //     // Handle error, for simplicity just printing an error message here
-        //     printf("Error reading sensor(s)\n");
-        // }
-        // prev_left = left_distance;
-        // prev_right = right_distance;
-
-        // Optional: Add a delay to limit the rate of measurements
-        // timer_delay_ms(100); // Delay for 500 milliseconds
+        count++;
     }
-
+    free(player1);
+    free(player2);
+    // free(players);
     return 0;
 }
 

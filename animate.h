@@ -15,36 +15,38 @@ void initializePinLeft();
 
 void initializePinRight();
 
-void display_falling_zone1();
+int display_falling_zone1();
 
-void display_falling_zone2();
+int display_falling_zone2();
 
-void display_falling_zone3();
+int display_falling_zone3();
 
-void display_falling_zone4();
+int display_falling_zone4();
 
-void display_falling_zone5();
+int display_falling_zone5();
 
-void display_falling_zone6();
+int display_falling_zone6();
 
-void display_falling_zone7();
+int display_falling_zone7();
 
-void display_falling_zone8();
+int display_falling_zone8();
 
-void display_falling_zone9();
+int display_falling_zone9();
 
-void display_falling_zone10();
+int display_falling_zone10();
 
-void display_falling_zone11();
+int display_falling_zone11();
 
-void display_falling_zone12();
+int display_falling_zone12();
 
-void display_falling_zone13();
+int display_falling_zone13();
 
-void display_falling_zone14();
+int display_falling_zone14();
 
-void display_falling_zone15();
+int display_falling_zone15();
 
-void display_zone(int left_distance, int right_distance);
+int display_zone(int left_distance, int right_distance);
+
+void clear(int x0, int y0, int x1, int y1);
 
 #endif
