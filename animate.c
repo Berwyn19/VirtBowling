@@ -18357,7 +18357,7 @@ void draw_ascii(const char *str, int x, int y) {
     }
 }
 
-void display_initial() {
+void pin_reset() {
     clear(0, 80, 800, 600);
     draw_ascii(pinStraight[0], 25, 325);
     draw_ascii(pinStraight[0], 175, 325);

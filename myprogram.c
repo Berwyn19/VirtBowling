@@ -81,26 +81,26 @@ int main(void) {
 
     while (1) {
         while(1){
+            // Setup the state for the game
             display_turn(count, "Berwyn", "Sazzad");
-            display_initial();
+            pin_reset();
+
+            // Measure the distance, and take the status from the sensor.
             left_status = hc_sr04_measure_distance(&left_sensor, &left_distance);
             right_status = hc_sr04_measure_distance(&right_sensor, &right_distance);
 
+            // Return error if the sensor's fail to read
             if (left_status != HC_SR04_SUCCESS || right_status != HC_SR04_SUCCESS){
                 printf("Error reading sensor(s)\n");
             }
-            // if (left_status != HC_SR04_SUCCESS) {
-            //     printf("Error reading sensor(s)\n");
-            // }
+
 
             if(abs(left_distance_0 - left_distance) >= 10 || abs(right_distance_0 - right_distance) >= 10){
                 left_distance_0 = left_distance;
                 right_distance_0 = right_distance;
                 break;
             }
-            // if (left_distance_0 - left_distance >= 3) {
-            //     break;
-            // }
+
         }
         int score = display_zone(left_distance, 0);
 

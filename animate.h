@@ -7,7 +7,7 @@ extern const char * pinLeft [18];
 
 void draw_ascii(const char *str, int x, int y);
 
-void display_initial();
+void pin_reset();
 
 void initializePinStraight();
 
