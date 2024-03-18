@@ -79,6 +79,9 @@ int main(void) {
 
     player1->round = 0;
     player2->round = 0;
+    
+    draw_scoreboard_boilerplate();
+    uart_putstring("Drew scoreboard boilerplate");
 
     while (1) {
         while(1){
@@ -96,24 +99,24 @@ int main(void) {
             }
 
 
-            if(abs(left_distance_0 - left_distance) >= 10 || abs(right_distance_0 - right_distance) >= 10){
-                left_distance_0 = left_distance;
-                right_distance_0 = right_distance;
-                break;
-            }
+            // if(abs(left_distance_0 - left_distance) >= 10 || abs(right_distance_0 - right_distance) >= 10){
+            //     left_distance_0 = left_distance;
+            //     right_distance_0 = right_distance;
+            //     break;
+            // }
 
         }
         int score = display_zone(left_distance, 0);
 
-        if ((count % 2) == 0) {
-            (player1->score)[player1->round] = score;
-            player1->round++;
-        }
+        // if ((count % 2) == 0) {
+        //     (player1->score)[player1->round] = score;
+        //     player1->round++;
+        // }
 
-        else if ((count % 2) == 1) {
-            (player2->score)[player2->round] = score;
-            player2->round++;
-        }
+        // else if ((count % 2) == 1) {
+        //     (player2->score)[player2->round] = score;
+        //     player2->round++;
+        // }
 
         count++;
     }

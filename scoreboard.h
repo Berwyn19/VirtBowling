@@ -13,23 +13,23 @@ struct Player{
 };
 
 
-/*
-* Create the empty scoreboard, and create all the sengemntation.
-*/
-void scoreboard_init();
+// /*
+// * Create the empty scoreboard, and create all the sengemntation.
+// */
+// void scoreboard_init();
 
 
-// Update the scoreboard with the player's score
-void scoreboard_update(Player *player);
+// // Update the scoreboard with the player's score
+// void scoreboard_update(Player *player);
 
 
-// Calculate the score of the player in that particular round
-int calculate_round_score(Player *player);
+// // Calculate the score of the player in that particular round
+// int calculate_round_score(Player *player);
 
 
 
 // Draw the scoreboard
-void draw_boilerplate(void);
+void draw_scoreboard_boilerplate(void);
 
 
 
